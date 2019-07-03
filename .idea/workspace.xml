@@ -6,6 +6,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="34287f36-82a8-46e4-ae3b-e8e6160cfa9e" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/infer/infer/classify.py" beforeDir="false" afterPath="$PROJECT_DIR$/infer/infer/classify.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -222,23 +223,22 @@
       <workItem from="1562077352076" duration="5194000" />
       <workItem from="1562141357543" duration="5324000" />
       <workItem from="1562146685000" duration="11279000" />
-      <workItem from="1562160461684" duration="2678000" />
+      <workItem from="1562160461684" duration="3363000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="47915000" />
+    <option name="totallyTimeSpent" value="48600000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="89" y="27" width="1789" height="1000" extended-state="1" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.26104417" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26104417" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3295063" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3306544" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.3306544" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
