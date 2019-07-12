@@ -133,7 +133,7 @@ class MultinomialNB(object):
             return numer / denom
 
     def _score(self, document, label):
-        """Multinomial raw score of a document given a label.
+        """ Multinomial raw score of a document given a label.
         Args:
             document: Collection of features.
             label: The target class label.

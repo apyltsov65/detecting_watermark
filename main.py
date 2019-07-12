@@ -1,7 +1,8 @@
 import glob
-import os
+import time
 from classify import MultinomialNB
 from PIL import Image
+from multiprocessing.dummy import Pool as ThreadPool
 
 TRAINING_POSITIVE = 'training_positive/*.jpg'
 TRAINING_NEGATIVE = 'training_negative/*.jpg'
@@ -9,14 +10,13 @@ TEST_POSITIVE = 'test_positive/*jpg'
 TEST_NEGATIVE = 'test_negative/*jpg'
 SAVE_CROP = '/home/anastasiiapyltsova/Projects/watermark_project/crop_image/'
 CROP_WIDTH, CROP_HEIGHT = 100, 100
-RESIZED = (16, 16)
+# RESIZED = (16, 16)
 
 
 def get_image_data(infile):
     image = Image.open(infile)
-    # image = image.convert('RGBA')
     width, height = image.size
-    # print(SAVE_CROP + os.path.splitext(infile)[-1])
+
     # left upper right lower
     left = width / 2 - CROP_WIDTH / 2
     upper = height / 2 - CROP_HEIGHT / 2
@@ -26,8 +26,8 @@ def get_image_data(infile):
     box = left, upper, right, lower
     region = image.crop(box)
     # region.save(SAVE_CROP + os.path.splitext(infile)[-2].split('/')[-1] + '.jpg', 'JPEG')
-    resized = region.convert('RGBA')
-    data = resized.getdata()
+    region = region.convert('RGBA')
+    data = region.getdata()
     # Convert RGB to simple averaged value.
     data = [sum(pixel) / 3 for pixel in data]
     # Combine location and value.
@@ -40,8 +40,11 @@ def get_image_data(infile):
 def main():
     watermark = MultinomialNB()
 #     Training
+#     number_of_threads = 20
+#     pool = ThreadPool(number_of_threads)
     count = 0
     for infile in glob.glob(TRAINING_POSITIVE):
+
         data = get_image_data(infile)
         watermark.train((data, 'positive'))
         count += 1
@@ -78,4 +81,7 @@ def main():
 
 
 if __name__ == '__main__':
+    start = time.time()
     main()
+    end = time.time()
+    print(f'Time of training: {end - start}')
